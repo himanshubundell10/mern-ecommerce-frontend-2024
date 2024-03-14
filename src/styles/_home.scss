@@ -51,7 +51,7 @@
     *img {
       @include square(calc(18.75rem - 3rem));
       object-fit: cover;
-      margin: 1rem;
+      margin: 5rem;
     }
   
     span {
