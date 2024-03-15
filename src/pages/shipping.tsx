@@ -11,6 +11,7 @@ const Shipping = () => {
   const { cartItems, total } = useSelector(
     (state: RootState) => state.cartReducer
   );
+  const { user } = useSelector((state: RootState) => state.userReducer);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -39,6 +40,8 @@ const Shipping = () => {
         `${server}/api/v1/payment/create`,
         {
           amount: total,
+          shippingInfo:shippingInfo,
+          user:user
         },
         {
           headers: {
